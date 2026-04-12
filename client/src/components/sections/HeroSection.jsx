@@ -5,8 +5,12 @@ const HeroSection = () => {
         <section className={styles.hero}>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <h1 className={styles.title}>Welcome to Midnight Manuscripts</h1>
-                    <p className={styles.subtitle}>Discover the world of indie music with us.</p>
+                    <h1 className={styles.title}> </h1>
+                    <p className={styles.subtitle}>A place to download free malware safe Cursor Packs for creative users!</p>
+                    <search className={styles.search}>
+                        <input type="text" placeholder="Search for cursor packs..." className={styles.searchInput} />
+                        <button className={styles.searchButton}>Search</button>
+                    </search>
                 </div>
             </div>
         </section>

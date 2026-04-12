@@ -23,23 +23,28 @@ const Navbar = () => {
                 
                 {/* Logo */}
                 <a href="/" className={styles.logo}>
-                    Cursorly
+                    Cursorly.
                 </a>
 
                 {/* Navbar Links (always visible) */}
                 <nav className={styles.navbar}>
                     <ul className={styles.navList}>
                         <li className={styles.navItem}>
-                            <Link to="/" className={styles.link}>HOME</Link>
+                            <Link to="/" className={styles.link}>Home</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link to="/blogpage" className={styles.link}>RELEASES</Link>
+                            <Link to="/blogpage" className={styles.link}>Releases</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link to="/aboutpage" className={styles.link}>ABOUT</Link>
+                            <Link to="/aboutpage" className={styles.link}>About Cursorly</Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link to="/aboutpage" className={styles.link}>Learn</Link>
                         </li>
                     </ul>
                 </nav>
+
+                <button className={styles.SignButton}>Sign In</button>
 
             </div>
         </header>
