@@ -33,18 +33,20 @@ const Navbar = () => {
                             <Link to="/" className={styles.link}>Home</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link to="/blogpage" className={styles.link}>Releases</Link>
+                            <Link to="/Releases" className={styles.link}>Releases</Link>
                         </li>
                         <li className={styles.navItem}>
                             <Link to="/aboutpage" className={styles.link}>About Cursorly</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link to="/aboutpage" className={styles.link}>Learn</Link>
+                            <Link to="/learnPage" className={styles.link}>Learn</Link>
                         </li>
                     </ul>
                 </nav>
 
-                <button className={styles.SignButton}>Sign In</button>
+                <button className={styles.UploadBtn} onClick={() => (window.location.href = '/UploadPage')}>
+                    Upload
+                </button>
 
             </div>
         </header>
