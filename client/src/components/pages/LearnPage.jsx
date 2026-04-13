@@ -1,7 +1,7 @@
 import Navbar from "../Navbar";
 import LearnSection from "../sections/LearnSection";
 
-LearnPage = () => {
+const LearnPage = () => {
     return (
         <div>
             <Navbar />

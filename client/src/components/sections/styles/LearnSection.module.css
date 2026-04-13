@@ -1,0 +1,52 @@
+.learnSection {
+    padding: 40px 20px;
+}
+
+/* Reuse your container feel */
+.container {
+    max-width: 800px;
+    margin: 0 auto 24px auto;
+    text-align: left;
+}
+
+/* Titles use your global styles */
+.title {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    margin-bottom: 8px;
+}
+
+/* Paragraphs */
+.description {
+    font-size: 11px; /* 👈 your requirement */
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* Lists */
+.list {
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+.listItem {
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+/* Image */
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.image {
+    max-width: 280px;
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+}
