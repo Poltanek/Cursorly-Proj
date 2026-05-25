@@ -15,12 +15,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ MongoDB
+// MongoDB
 mongoose.connect("mongodb+srv://adamtanweer4_db_user:Rimuru101OP@cursorlycluster.ubaxb0c.mongodb.net/cursorly?retryWrites=true&w=majority")
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB error:", err));
 
-// ✅ Ensure secure storage dir exists
+// Ensure secure storage dir exists
 const SECURE_DIR = path.join(__dirname, "secure_storage");
 if (!fs.existsSync(SECURE_DIR)) {
     fs.mkdirSync(SECURE_DIR);
@@ -29,7 +29,7 @@ if (!fs.existsSync(SECURE_DIR)) {
 // ❗ Do NOT expose secure_storage statically
 // app.use("/secure_storage", express.static("secure_storage")); // NO
 
-// ✅ SHA-256 helper
+// SHA-256 helper
 function sha256File(filePath) {
     return new Promise((resolve, reject) => {
         const hash = crypto.createHash("sha256");
@@ -41,7 +41,7 @@ function sha256File(filePath) {
     });
 }
 
-// ✅ ZIP entry validation
+// ZIP entry validation
 function validateZipEntries(entries) {
     const allowed = [".cur", ".ani", ".png", ".jpg", ".jpeg"];
 
@@ -68,7 +68,7 @@ function validateZipEntries(entries) {
     return null;
 }
 
-// ✅ Multer storage (secure dir + UUID filenames)
+// Multer storage (secure dir + UUID filenames)
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, SECURE_DIR);
@@ -83,7 +83,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// ✅ Upload route
+// Upload route
 app.post("/upload", upload.fields([
     { name: "zip", maxCount: 1 },
     { name: "image", maxCount: 1 }
@@ -139,7 +139,7 @@ app.post("/upload", upload.fields([
     }
 });
 
-// ✅ Download ZIP with integrity check
+// Download ZIP with integrity check
 app.get("/download/zip/:filename", async (req, res) => {
     try {
         const filename = req.params.filename;
@@ -169,7 +169,7 @@ app.get("/download/zip/:filename", async (req, res) => {
     }
 });
 
-// ✅ Download image (no hash check, but still from secure dir)
+// Download image (no hash check, but still from secure dir)
 app.get("/download/image/:filename", async (req, res) => {
     try {
         const filename = req.params.filename;
@@ -187,7 +187,7 @@ app.get("/download/image/:filename", async (req, res) => {
     }
 });
 
-// ✅ Get all packs
+// Get all packs
 app.get("/packs", async (req, res) => {
     try {
         const packs = await CursorPack.find().sort({ createdAt: -1 });
@@ -198,6 +198,6 @@ app.get("/packs", async (req, res) => {
     }
 });
 
-// ✅ Start server
+
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
