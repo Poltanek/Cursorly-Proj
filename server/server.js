@@ -1,5 +1,6 @@
 require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
 
+
 const express = require("express");
 const mongoose = require("mongoose");
 const multer = require("multer");
@@ -13,13 +14,15 @@ const mime = require("mime-types");
 const dotenv = require("dotenv");
 const CursorPack = require("./Models/CursorPack");
 
+dotenv.config();
+
 const app = express();
 app.use(cors());
 app.use(express.json())
 
 
 // MongoDB
-mongoose.connect("mongodb+srv://adam:Rimuru101OP@cluster0.ke1t7aw.mongodb.net/?appName=Cluster0")
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB error:", err));
 
