@@ -20,19 +20,26 @@ const HeroSection = () => {
     return (
         <section className={styles.hero}>
             <div className={styles.container}>
-                <h1 className={styles.title}>Downloading free cursors (mouse pointers)</h1>
+                <h1 className={styles.title}>Download Free and Safe Cursors!</h1>
                 <p className={styles.description}>
                     This library contains computer mouse cursors for Microsoft Windows systems. 
                     There are two types of cursors supported directly by Windows operating systems: static (.cur) and animated (.ani). 
                     Both types are present in this library. 
                 </p>
 
-                <input
-                    type="text"
-                    placeholder="Search..."
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                />
+                <div className={styles.searchWrapper}>
+                    <div className={styles.searchBar}>
+                        <input
+                            className={styles.searchInput}
+                            type="text"
+                            placeholder="Search..."
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                        />
+                    </div>
+                </div>
+
+                <h2 className={styles.subheading}>Recent Releases</h2>
 
                 <div className={styles.results}>
                     {filteredPacks.map((pack) => (

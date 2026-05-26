@@ -25,6 +25,8 @@
 }
 
 .logo {
+    display: flex;
+    gap: 8px;
     font-size: 32px;
     color: white;
     font-weight: 700;
@@ -50,9 +52,13 @@
 }
 
 .navItem {
+    display: flex;
     font-size: 16px;
     font-weight: 500;
     position: relative;
+    gap: 8px;
+    margin-left: 20px;
+    align-items: center;
 }
 
 .link {
@@ -64,6 +70,20 @@
 
 .link:hover {
     color: gray;
+}
+
+.UploadBtn {
+    background: #fff;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-out;
+}
+
+.UploadBtn:hover {
+    background: #333333;
 }
 
 .navItem::before {
