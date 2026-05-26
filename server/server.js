@@ -30,8 +30,6 @@ if (!fs.existsSync(SECURE_DIR)) {
     fs.mkdirSync(SECURE_DIR);
 }
 
-// app.use("/secure_storage", express.static("secure_storage"))
-
 // SHA-256 helper
 function sha256File(filePath) {
     return new Promise((resolve, reject) => {
@@ -100,18 +98,15 @@ app.post("/upload", upload.fields([
             return res.status(400).json({ error: "ZIP file is required" });
         }
 
-        // Basic MIME validation for ZIP
         if (zipFile.mimetype !== "application/zip" &&
             zipFile.mimetype !== "application/x-zip-compressed") {
             return res.status(400).json({ error: "Invalid ZIP MIME type" });
         }
 
-        // Optional: validate image MIME
         if (imageFile && !imageFile.mimetype.startsWith("image/")) {
             return res.status(400).json({ error: "Invalid image MIME type" });
         }
 
-        // Validate ZIP contents
         const zip = new AdmZip(zipFile.path);
         const entries = zip.getEntries();
 
