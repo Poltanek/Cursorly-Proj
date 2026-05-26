@@ -49,7 +49,7 @@ const UploadForm = ({ setPacks }) => {
 
             alert("Uploaded!");
 
-            // ✅ Add to homepage instantly
+            // Add new pack to UI (optimistic update)
             setPacks(prev => [
                 {
                     name,
@@ -109,7 +109,7 @@ const UploadForm = ({ setPacks }) => {
                     />
                 )}
 
-                {/* ✅ Progress bar */}
+                {/* Progress bar */}
                 {progress > 0 && (
                     <div className={styles.progressBar}>
                         <div
