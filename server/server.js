@@ -30,8 +30,7 @@ if (!fs.existsSync(SECURE_DIR)) {
     fs.mkdirSync(SECURE_DIR);
 }
 
-// ❗ Do NOT expose secure_storage statically
-// app.use("/secure_storage", express.static("secure_storage")); // NO
+// app.use("/secure_storage", express.static("secure_storage"))
 
 // SHA-256 helper
 function sha256File(filePath) {
@@ -72,7 +71,8 @@ function validateZipEntries(entries) {
     return null;
 }
 
-// Multer storage (secure dir + UUID filenames)
+// Multer storage
+// Secure Dir + UUID filenames 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, SECURE_DIR);
