@@ -51,6 +51,10 @@ MERN Stack:
 
 ## Usage
 
+### File Structure
+<img width="205" height="398" alt="image" src="https://github.com/user-attachments/assets/71735ec3-1494-46f7-b2c1-7b2c45696f96" />
+
+
 ### Backend should look like:
 <img width="710" height="201" alt="image" src="https://github.com/user-attachments/assets/0b727ceb-87b6-4da3-b7bf-0990a062be24" />
 
