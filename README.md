@@ -46,6 +46,7 @@ MERN Stack:
 * npm
   ```sh
   npm install npm@latest -g
+  npm install -g nodemon
   ```
 
 ## Usage
